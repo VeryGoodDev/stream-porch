@@ -1,0 +1,11 @@
+{
+  "name": "stream-porch",
+  "version": "0.1.0",
+  "description": "Experimenting with websockets to see if I can make something with similar functionality to a stream deck",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo YOLO"
+  },
+  "author": "",
+  "license": "ISC"
+}
