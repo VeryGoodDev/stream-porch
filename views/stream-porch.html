@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stream Porch</title>
+  <style>
+    .hide {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="unconnected">Waiting to connect to server</div>
+  <div class="failed-connection hide">Failed to connect to server</div>
+  <div class="controls hide">
+    <button type="button" data-type="audio" data-value="stillDre">
+      Play Still Dre
+    </button>
+    <button type="button" data-type="audio" data-value="gangstaParadise">
+      Play Gangsta's Paradise
+    </button>
+    <button type="button" data-type="audio" data-value="randomGangster">
+      Play Random Gangsta
+    </button>
+    <button type="button" data-type="audio" data-value="moveBitch">
+      Play Move Bitch
+    </button>
+    <button type="button" data-type="audio" data-value="surprise">
+      Play Surprise
+    </button>
+    <button type="button" data-type="audio" data-value="sadViolin">
+      Play Sad Violin
+    </button>
+  </div>
+  <script src="https://unpkg.com/socket.io-client@2.3.1/dist/socket.io.js"></script>
+  <script src="/js/stream-porch.js"></script>
+</body>
+</html>

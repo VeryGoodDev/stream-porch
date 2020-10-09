@@ -4,8 +4,23 @@
   "description": "Experimenting with websockets to see if I can make something with similar functionality to a stream deck",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo YOLO"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "eslint": "^7.2.0",
+    "eslint-config-personal": "github:veryGoodDev/eslint-config-personal"
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint-config-personal"
+    ]
+  }
 }
