@@ -11,4 +11,6 @@
       }
     })
   })
+  // TODO: Custom options for reconnect
+  // TODO: Handle more built-in events
 })()

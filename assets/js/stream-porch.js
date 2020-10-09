@@ -10,6 +10,8 @@
       btn.addEventListener(`click`, sendRequest)
     })
   })
+  // TODO: Custom options for reconnect
+  // TODO: Handle more built-in events
   socket.on(`connect_error`, () => {
     unconnected.classList.add(`hide`)
     failedConnect.classList.remove(`hide`)
