@@ -20,6 +20,7 @@
 .idea
 .vscode
 .env
+assets/audio
 
 npm-debug.log*
 yarn-debug.log*
