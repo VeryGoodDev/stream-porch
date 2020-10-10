@@ -22,7 +22,9 @@
   })
 
   function sendRequest({ target }) {
-    const { type, value } = target.dataset
-    socket.emit(`requestAction`, { type, value })
+    const { type, value, display } = target.dataset
+    socket.emit(`requestAction`, { type, value, display })
+    navigator.vibrate(0)
+    navigator.vibrate([5, 90, 5])
   }
 })()

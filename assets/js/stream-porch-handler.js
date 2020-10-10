@@ -1,16 +1,26 @@
 ;(() => {
+  const output = document.querySelector(`output`)
   const socket = window.io()
   socket.on(`connect`, () => {
-    socket.on(`handleAction`, ({ type, value }) => {
-      console.log(`action!`)
+    output.textContent = `No actions happening`
+    socket.on(`handleAction`, ({ type, value, display }) => {
       if (type === `audio`) {
-        // TODO: Error handling
-        // TODO: Show on screen when something happens
-        // (hook into audio API to determine when start/stop?)
-        document.querySelector(`[data-name="${value}"]`).play()
+        const audio = document.querySelector(`[data-name="${value}"]`)
+        if (!audio) {
+          output.textContent = `Bad audio action provided`
+          console.error(`Bad action provided`, { type, value, display })
+          return
+        }
+        audio.addEventListener(`ended`, handleEnded)
+        audio.play()
+        output.textContent = `Now playing ${display}`
       }
     })
   })
   // TODO: Custom options for reconnect
   // TODO: Handle more built-in events
+  function handleEnded({ currentTarget }) {
+    output.textContent = `No actions happening`
+    currentTarget.removeEventListener(`ended`, handleEnded)
+  }
 })()

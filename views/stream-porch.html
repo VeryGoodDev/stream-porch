@@ -3,34 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/common.css">
   <title>Stream Porch</title>
   <style>
-    .hide {
-      display: none !important;
+    body {
+      align-items: center;
+      display: grid;
+      justify-items: center;
+    }
+    .controls {
+      display: grid;
+      grid-auto-rows: 1fr;
+      grid-gap: 1.5em;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      max-width: 910px;
+      padding: 2em;
+      width: 100vw;
+    }
+    .controls button {
+      background-color: inherit;
+      border: 4px solid #fffb;
+      border-radius: 8px;
+      color: #fff;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1.25em;
+      padding: 1.5em;
+      transition: background-color 150ms ease-in-out, transform 125ms linear;
+      user-select: none;
+    }
+    .controls button:active {
+      transform: scale(0.985);
+    }
+    .controls button:focus {
+      outline: none;
+    }
+    .controls button:hover {
+      background-color: #ffffff1a;
+    }
+    .controls button[data-type=audio] {
+      background-image: url('/img/icon/audio.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
     }
   </style>
 </head>
 <body>
-  <div class="unconnected">Waiting to connect to server</div>
-  <div class="failed-connection hide">Failed to connect to server</div>
+  <div class="status unconnected">Waiting to connect to server</div>
+  <div class="status failed-connection hide">Failed to connect to server</div>
   <div class="controls hide">
-    <button type="button" data-type="audio" data-value="stillDre">
-      Play Still Dre
+    <button type="button" data-type="audio" data-value="stillDre" data-display="Still Dre">
+      Still Dre
     </button>
-    <button type="button" data-type="audio" data-value="gangstaParadise">
-      Play Gangsta's Paradise
+    <button type="button" data-type="audio" data-value="gangstaParadise" data-display="Gangsta's Paradise">
+      Gangsta's Paradise
     </button>
-    <button type="button" data-type="audio" data-value="randomGangster">
-      Play Random Gangsta
+    <button type="button" data-type="audio" data-value="seeMeRollin" data-display="See Me Rollin">
+      See Me Rollin
     </button>
-    <button type="button" data-type="audio" data-value="moveBitch">
-      Play Move Bitch
+    <button type="button" data-type="audio" data-value="ridinDirty" data-display="Ridin Dirty">
+      Ridin Dirty
     </button>
-    <button type="button" data-type="audio" data-value="surprise">
-      Play Surprise
+    <!-- <button type="button" data-type="audio" data-value="moveBitch" data-display="Move Bitch">
+      Move Bitch
+    </button> -->
+    <button type="button" data-type="audio" data-value="surprise" data-display="Surprise">
+      Surprise
     </button>
-    <button type="button" data-type="audio" data-value="sadViolin">
-      Play Sad Violin
+    <button type="button" data-type="audio" data-value="sadViolin" data-display="Sad Violin">
+      Sad Violin
     </button>
   </div>
   <script src="https://unpkg.com/socket.io-client@2.3.1/dist/socket.io.js"></script>
