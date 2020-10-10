@@ -11,6 +11,13 @@
           console.error(`Bad action provided`, { type, value, display })
           return
         }
+        document.querySelectorAll(`audio`).forEach(audioEl => {
+          if (!audioEl.paused) {
+            audioEl.pause()
+            audioEl.currentTime = 0
+            audioEl.removeEventListener(`ended`, handleEnded)
+          }
+        })
         audio.addEventListener(`ended`, handleEnded)
         audio.play()
         output.textContent = `Now playing ${display}`
