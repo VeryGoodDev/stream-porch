@@ -4,7 +4,9 @@
   "description": "Experimenting with websockets to see if I can make something with similar functionality to a stream deck",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "forward": "npx localtunnel --port 9000 --subdomain streamporch",
+    "serve": "node index.js",
+    "start": "npm-run-all --parallel serve forward",
     "test": "echo YOLO"
   },
   "author": "",
@@ -16,7 +18,8 @@
   "devDependencies": {
     "dotenv": "^8.2.0",
     "eslint": "^7.2.0",
-    "eslint-config-personal": "github:veryGoodDev/eslint-config-personal"
+    "eslint-config-personal": "github:veryGoodDev/eslint-config-personal",
+    "npm-run-all": "^4.1.5"
   },
   "eslintConfig": {
     "extends": [

@@ -1,4 +1,5 @@
 const express = require(`express`)
+// TODO: Add service worker for easier phone access
 const app = express()
 app.use(express.static(`${__dirname}/assets`))
 app.get(`/`, (req, res) => {
