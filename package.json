@@ -4,7 +4,7 @@
   "description": "Experimenting with websockets to see if I can make something with similar functionality to a stream deck",
   "main": "index.js",
   "scripts": {
-    "forward": "npx localtunnel --port 9000 --subdomain streamporch",
+    "forward": "npx localtunnel --port 9000 --subdomain stream-porch",
     "serve": "node index.js",
     "start": "npm-run-all --parallel serve forward",
     "test": "echo YOLO"

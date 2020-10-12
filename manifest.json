@@ -1,0 +1,20 @@
+{
+  "name": "Stream Porch",
+  "short_name": "Stream Porch",
+  "icons": [
+    {
+      "src": "/img/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "hsl(200, 50%, 5%)",
+  "theme_color": "#fff"
+}

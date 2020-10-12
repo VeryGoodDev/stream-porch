@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/common.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+  <link rel="shortcut icon" href="/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
   <title>Stream Porch</title>
   <style>
     body {
@@ -75,6 +79,22 @@
       Sad Violin
     </button>
   </div>
+  <script>
+    if (`serviceWorker` in navigator) {
+      navigator.serviceWorker
+        .register(`./service-worker.js`)
+        .then(reg => {
+          console.log(`Registered service worker`, reg)
+        })
+        .catch(err => {
+          console.error(`Error registering service worker`, err)
+          alert(err)
+        })
+      window.addEventListener(`beforeinstallprompt`, evt => {
+        alert(`Before install prompt`)
+      })
+    }
+  </script>
   <script src="https://unpkg.com/socket.io-client@2.3.1/dist/socket.io.js"></script>
   <script src="/js/stream-porch.js"></script>
 </body>
