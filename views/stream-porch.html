@@ -97,7 +97,7 @@
     }
     if (`wakeLock` in navigator) {
       navigator.wakeLock
-    .request(`screen`)
+        .request(`screen`)
         .then(lock => {
           console.log(`wake lock acquired`, lock)
         })
