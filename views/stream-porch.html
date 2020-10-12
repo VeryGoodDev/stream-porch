@@ -95,6 +95,17 @@
         alert(`Before install prompt`)
       })
     }
+    if (`wakeLock` in navigator) {
+      navigator.wakeLock
+    .request(`screen`)
+        .then(lock => {
+          console.log(`wake lock acquired`, lock)
+        })
+        .catch(err => {
+          console.error(`failed to acquire wake lock`, err)
+          alert(`failed to acquire wake lock`, err)
+        })
+    }
   </script>
   <script src="https://unpkg.com/socket.io-client@2.3.1/dist/socket.io.js"></script>
   <script src="/js/stream-porch.js"></script>
