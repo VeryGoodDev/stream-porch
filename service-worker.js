@@ -1,3 +1,5 @@
+/* eslint-disable no-restricted-globals */
+
 self.addEventListener(`install`, evt => {
   evt.waitUntil(
     caches.open(`stream-porch`).then(cache => {
