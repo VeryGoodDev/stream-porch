@@ -20,6 +20,7 @@
         })
         audio.addEventListener(`ended`, handleEnded)
         audio.play()
+        audio.volume = 0.2
         output.textContent = `Now playing ${display}`
       }
     })
